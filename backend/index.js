@@ -1,7 +1,6 @@
 const http = require("http");
 const url = require("url");
 const todoController = require("./controllers/todoController");
-const helloController = require("./controllers/helloController");
 const swaggerController = require("./controllers/swaggerController");
 
 const server = http.createServer((req, res) => {
@@ -20,11 +19,7 @@ const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
     const id = parsedUrl.pathname.split("/")[2];
 
-    if (parsedUrl.pathname === "/hello" && req.method === "GET") {
-        helloController.sayHelloGet(req, res, parsedUrl.query);
-    } else if (parsedUrl.pathname === "/hello" && req.method === "POST") {
-        helloController.sayHelloPost(req, res);
-    } else if (parsedUrl.pathname === "/todos" && req.method === "GET") {
+    if (parsedUrl.pathname === "/todos" && req.method === "GET") {
         todoController.getTodos(req, res);
     } else if (parsedUrl.pathname.startsWith("/todos/") && req.method === "GET") {
         todoController.getTodoById(req, res, id);
