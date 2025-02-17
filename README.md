@@ -59,39 +59,21 @@ npm run dev
 Falls du das Backend und Frontend separat starten möchtest:
 
 ```bash
-npm run start:backend  # Startet das Backend unter http://localhost:3000
-npm run start:frontend # Startet das Frontend unter http://localhost:8080
+npm run start:backend
+npm run start:frontend
 ```
 
 Die App läuft dann unter [**http://localhost:8080**](http://localhost:8080) (Frontend) und nutzt das Backend unter [**http://localhost:3000**](http://localhost:3000).
 
 ---
 
-## 📌 API-Endpunkte (To-Do API)
+## 📌 API-Endpunkte (Swagger UI)
 
-### **Alle To-Dos abrufen**
+Nach dem Start des Servers ist Swagger UI unter folgender URL erreichbar:
 
-```bash
-curl -X GET http://localhost:3000/todos
-```
+http://localhost:3000/swagger
 
-### **Neues To-Do erstellen**
-
-```bash
-curl -X POST http://localhost:3000/todos -H "Content-Type: application/json" -d '{"title": "Frontend bauen", "done": false}'
-```
-
-### **Ein To-Do aktualisieren**
-
-```bash
-curl -X PUT http://localhost:3000/todos/1 -H "Content-Type: application/json" -d '{"done": true}'
-```
-
-### **Ein To-Do löschen**
-
-```bash
-curl -X DELETE http://localhost:3000/todos/1
-```
+Hier können alle Endpunkte getestet und ihre Strukturen eingesehen werden.
 
 ---
 
@@ -99,10 +81,6 @@ curl -X DELETE http://localhost:3000/todos/1
 
 1. **Verstehe die Struktur von Backend und Frontend.**
 2. **Binde das Frontend an die API an** – Die Hauptaufgabe besteht darin, die UI mit der API zu verbinden.
-3. **Erweitere das Projekt um neue Features** – Beispiele:
-   - Sortierung oder Filterung der To-Dos
-   - Speicherung des Status im `localStorage`
-   - Bessere UI mit mehr CSS-Optimierungen
 
 ---
 
