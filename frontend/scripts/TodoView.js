@@ -1,3 +1,6 @@
+/**
+ * View: Darstellung der UI-Elemente und Interaktion.
+ */
 class TodoView {
     constructor() {
         this.app = document.getElementById('app');
@@ -9,7 +12,11 @@ class TodoView {
         this.errorMessage.style.color = 'red';
         this.app.append(this.input, this.addButton, this.errorMessage, this.todoList);
     }
-
+    
+    /**
+     * Rendert die Liste der Todos in der UI.
+     * @param {Array} todos - Liste der Todos.
+     */
     renderTodos(todos) {
         this.todoList.innerHTML = '';
         todos.forEach(todo => {
@@ -31,18 +38,34 @@ class TodoView {
         });
     }
 
+    /**
+     * Zeigt eine Fehlermeldung in der UI an.
+     * @param {string} message - Die Fehlermeldung.
+     */
     displayError(message) {
         this.errorMessage.textContent = message;
     }
 
+    /**
+     * Setzt den Event-Handler für das Löschen eines Todos.
+     * @param {Function} handler - Die Callback-Funktion.
+     */
     setDeleteHandler(handler) {
         this.onDeleteClick = handler;
     }
 
+    /**
+     * Setzt den Event-Handler für das Umschalten eines Todos.
+     * @param {Function} handler - Die Callback-Funktion.
+     */
     setToggleHandler(handler) {
         this.onToggleClick = handler;
     }
 
+    /**
+     * Setzt den Event-Handler für das Hinzufügen eines Todos.
+     * @param {Function} handler - Die Callback-Funktion.
+     */
     setAddHandler(handler) {
         this.addButton.onclick = () => {
             const title = this.input.value.trim();
@@ -52,4 +75,4 @@ class TodoView {
             }
         };
     }
-}
+} 
