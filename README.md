@@ -84,5 +84,72 @@ Hier können alle Endpunkte getestet und ihre Strukturen eingesehen werden.
 
 ---
 
+## 📋 Cheatsheets
+
+### **1️⃣ Fetch API nutzen**
+```javascript
+// GET - Daten abrufen
+fetch('http://localhost:3000/todos')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+// POST - Neues To-Do hinzufügen
+fetch('http://localhost:3000/todos', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ title: 'Neues To-Do', done: false })
+});
+
+// PUT - To-Do aktualisieren
+fetch('http://localhost:3000/todos/1', {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ done: true })
+});
+
+// DELETE - To-Do löschen
+fetch('http://localhost:3000/todos/1', {
+  method: 'DELETE'
+});
+```
+
+### **2️⃣ DOM-Manipulation**
+```javascript
+// Element auswählen und Inhalt ändern
+document.querySelector('#output').textContent = 'Neuer Inhalt';
+
+// Neues Element erstellen und anhängen
+const newElement = document.createElement('p');
+newElement.textContent = 'Ich bin neu!';
+document.body.appendChild(newElement);
+
+// Element entfernen
+document.querySelector('#output').remove();
+```
+
+### **3️⃣ Event Listener setzen**
+```javascript
+// Klick-Event
+const button = document.querySelector('#myButton');
+button.addEventListener('click', () => {
+    alert('Button wurde geklickt!');
+});
+
+// Input-Event
+const input = document.querySelector('#myInput');
+input.addEventListener('input', (event) => {
+    console.log('Eingegebener Text:', event.target.value);
+});
+
+// Formular absenden
+const form = document.querySelector('#myForm');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('Formular wurde abgeschickt!');
+});
+```
+
+---
+
 ## 🚀 Viel Spaß beim Coden! 🎉
 
